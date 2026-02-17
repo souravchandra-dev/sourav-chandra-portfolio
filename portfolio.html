@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sourav Chandra | Cloud Architect & Engineering Leader</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#020617',
+                        card: '#0f172a',
+                        neonCyan: '#22d3ee',
+                        neonViolet: '#8b5cf6',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        [x-cloak] { display: none !important; }
+        .glass { background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .text-gradient { background: linear-gradient(135deg, #22d3ee 0%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="bg-dark text-slate-200 antialiased overflow-x-hidden" x-data="{ mobileMenu: false, scrolled: false }" @scroll.window="scrolled = (window.pageYOffset > 20)">
+
+    <nav :class="scrolled ? 'glass py-3' : 'bg-transparent py-6'" class="fixed w-full z-50 transition-all duration-300 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-black tracking-tighter">
+                SOURAV <span class="text-neonCyan">CHANDRA</span>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-10">
+                <div class="flex gap-8 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400">
+                    <a href="#about" class="hover:text-neonCyan transition">About</a>
+                    <a href="#experience" class="hover:text-neonCyan transition">Experience</a>
+                    <a href="#tech" class="hover:text-neonCyan transition">Stack</a>
+                </div>
+                <a href="mailto:souravchandra@gmail.com" class="px-6 py-2 rounded-full border border-neonCyan/30 text-neonCyan text-[11px] font-bold uppercase tracking-widest hover:bg-neonCyan hover:text-dark transition duration-300">
+                    Get in Touch
+                </a>
+            </div>
+
+            <button class="md:hidden text-2xl" @click="mobileMenu = !mobileMenu">
+                <i class="fas" :class="mobileMenu ? 'fa-times' : 'fa-bars-staggered'"></i>
+            </button>
+        </div>
+
+        <div x-show="mobileMenu" x-cloak x-transition class="absolute top-full left-0 w-full glass p-6 flex flex-col gap-4 text-center md:hidden">
+            <a href="#about" @click="mobileMenu = false" class="py-2">About</a>
+            <a href="#experience" @click="mobileMenu = false" class="py-2">Experience</a>
+            <a href="#tech" @click="mobileMenu = false" class="py-2">Stack</a>
+        </div>
+    </nav>
+
+    <section id="about" class="relative min-h-screen flex items-center pt-20 px-6 md:px-12 overflow-hidden">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neonCyan/10 border border-neonCyan/20 text-neonCyan text-[10px] font-bold uppercase tracking-widest mb-6">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-neonCyan opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-neonCyan"></span>
+                    </span>
+                    Director of Engineering
+                </div>
+                <h1 class="text-5xl md:text-8xl font-black mb-6 leading-tight">
+                    Sourav <br><span class="text-gradient">Chandra</span>
+                </h1>
+                <p class="text-slate-400 text-lg md:text-xl mb-10 leading-relaxed max-w-xl">
+                    Cloud Architect with 20+ years of experience[cite: 68, 70]. 
+                    Specializing in <span class="text-white">secure, high-availability platforms</span> and scaling engineering orgs from 1 to 5 teams[cite: 70, 16].
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="SOURAV_CHANDRA.pdf" target="_blank" class="bg-neonCyan hover:bg-cyan-300 text-dark px-8 py-4 rounded-2xl font-bold transition flex items-center gap-2 transform hover:-translate-y-1">
+                        <i class="fas fa-file-pdf"></i> Download CV
+                    </a>
+                    <a href="https://linkedin.com/in/souravchandra/" target="_blank" class="glass px-8 py-4 rounded-2xl font-bold hover:bg-white/5 transition flex items-center gap-2 border border-white/10">
+                        <i class="fab fa-linkedin text-neonCyan"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+
+            <div class="relative" data-aos="zoom-in">
+                <div class="absolute -inset-10 bg-neonCyan/10 blur-[100px] rounded-full"></div>
+                <div class="relative glass p-3 rounded-[3rem]">
+                    <img src="506694996_10093239347401769_5495142376678305721_n.jpg" 
+                         alt="Sourav Chandra" 
+                         onerror="this.src='https://ui-avatars.com/api/?name=Sourav+Chandra&size=512&background=020617&color=22d3ee'"
+                         class="rounded-[2.5rem] w-full aspect-[4/5] object-cover grayscale hover:grayscale-0 transition duration-700 shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-32 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-20 flex items-center gap-4" data-aos="fade-up">
+                <span class="h-px w-12 bg-neonCyan"></span> Career Milestones
+            </h2>
+            
+            <div class="space-y-12">
+                <div class="glass p-8 rounded-3xl group transition hover:border-neonCyan/30" data-aos="fade-up">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+                        <div>
+                            <h3 class="text-2xl font-bold group-hover:text-neonCyan transition">Director, Engineering</h3>
+                            <p class="text-slate-500 font-mono text-sm">Vimeo | 2022 — 2026 [cite: 7, 79]</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 text-slate-400 text-sm md:text-base">
+                        <li class="flex gap-3"><i class="fas fa-caret-right text-neonCyan mt-1"></i> Scaled India engineering from 1 to 5 high-performing teams[cite: 16].</li>
+                        <li class="flex gap-3"><i class="fas fa-caret-right text-neonCyan mt-1"></i> Spearheaded GCP migration to GKE, achieving 99.9% reliability[cite: 91].</li>
+                        <li class="flex gap-3"><i class="fas fa-caret-right text-neonCyan mt-1"></i> Authored Review Handbook, reducing post-release bugs by 20%[cite: 10, 99].</li>
+                    </ul>
+                </div>
+
+                <div class="glass p-8 rounded-3xl group transition hover:border-neonViolet/30" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+                        <div>
+                            <h3 class="text-2xl font-bold group-hover:text-neonViolet transition">Senior Software Engineer</h3>
+                            <p class="text-slate-500 font-mono text-sm">Livestream | 2011 — 2017 [cite: 22, 103]</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed italic border-l-2 border-neonViolet/30 pl-4">
+                        "Architected a real-time analytics platform utilizing Scala, Kafka, and BigQuery, processing 1B+ events/day with sub-second latency"[cite: 23, 80, 81].
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tech" class="py-32 px-6 bg-slate-900/20">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <h2 class="text-4xl font-bold mb-4">Core Competencies</h2>
+                <p class="text-slate-500">Mastery across cloud infrastructure and distributed systems[cite: 6, 75].</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="glass p-8 rounded-3xl text-center" data-aos="flip-left">
+                    <div class="text-3xl text-neonCyan mb-4"><i class="fas fa-cloud"></i></div>
+                    <h4 class="font-bold mb-2">Cloud</h4>
+                    <p class="text-[10px] text-slate-500 uppercase">GCP, GKE, BigQuery [cite: 75, 91]</p>
+                </div>
+                <div class="glass p-8 rounded-3xl text-center" data-aos="flip-left" data-aos-delay="100">
+                    <div class="text-3xl text-neonViolet mb-4"><i class="fas fa-code-branch"></i></div>
+                    <h4 class="font-bold mb-2">Backend</h4>
+                    <p class="text-[10px] text-slate-500 uppercase">Java, Scala, PHP [cite: 75]</p>
+                </div>
+                <div class="glass p-8 rounded-3xl text-center" data-aos="flip-left" data-aos-delay="200">
+                    <div class="text-3xl text-emerald-400 mb-4"><i class="fas fa-database"></i></div>
+                    <h4 class="font-bold mb-2">Data</h4>
+                    <p class="text-[10px] text-slate-500 uppercase">Kafka, Redis, MySQL [cite: 6, 75]</p>
+                </div>
+                <div class="glass p-8 rounded-3xl text-center" data-aos="flip-left" data-aos-delay="300">
+                    <div class="text-3xl text-amber-400 mb-4"><i class="fas fa-users-gear"></i></div>
+                    <h4 class="font-bold mb-2">Scale</h4>
+                    <p class="text-[10px] text-slate-500 uppercase">Team Growth, POCs [cite: 6, 58]</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-white/5 text-center text-slate-600">
+        <div class="flex justify-center gap-6 mb-8 text-xl">
+            <a href="https://linkedin.com/in/souravchandra/" class="hover:text-neonCyan transition"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:souravchandra@gmail.com" class="hover:text-neonCyan transition"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p class="text-[10px] uppercase tracking-widest">&copy; 2026 | Sourav Chandra | Built for High Availability</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+    </script>
+</body>
+</html>
